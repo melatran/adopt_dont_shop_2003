@@ -209,18 +209,18 @@
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -243,6 +243,10 @@
         1,
         1,
         null,
+        null,
+        1,
+        2,
+        null,
         null
       ],
       "/Users/melanietran/turing/Mod2/projects/adopt_dont_shop_2003/app/controllers/application_controller.rb": [
@@ -251,6 +255,6 @@
         null
       ]
     },
-    "timestamp": 1588716689
+    "timestamp": 1588717953
   }
 }
