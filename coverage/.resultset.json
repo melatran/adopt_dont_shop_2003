@@ -182,14 +182,55 @@
         1,
         null,
         1,
+        1,
         null
       ],
       "/Users/melanietran/turing/Mod2/projects/adopt_dont_shop_2003/app/helpers/application_helper.rb": [
         1,
         null
       ],
+      "/Users/melanietran/turing/Mod2/projects/adopt_dont_shop_2003/spec/features/shelters/shelter_show_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/melanietran/turing/Mod2/projects/adopt_dont_shop_2003/app/models/shelter.rb": [
         1,
+        1,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/melanietran/turing/Mod2/projects/adopt_dont_shop_2003/app/models/application_record.rb": [
@@ -202,6 +243,10 @@
         1,
         1,
         null,
+        null,
+        1,
+        2,
+        null,
         null
       ],
       "/Users/melanietran/turing/Mod2/projects/adopt_dont_shop_2003/app/controllers/application_controller.rb": [
@@ -210,6 +255,6 @@
         null
       ]
     },
-    "timestamp": 1588708399
+    "timestamp": 1588717953
   }
 }
