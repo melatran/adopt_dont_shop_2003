@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "pets index page", type: :feature do
   it "can see all pets" do
     pet_1 = Pet.create(
-      image: '/',
+      image: 'https://www.petful.com/wp-content/uploads/2014/01/maltese-1.jpg',
       name: "MoMo",
       approximate_age: "4",
       sex: "male",
@@ -11,7 +11,7 @@ RSpec.describe "pets index page", type: :feature do
     )
 
     visit '/pets'
-    expect(page).to have_content(pet_1.image)
+    expect(page).to have_css("img[src='#{pet_1.image}']")
     expect(page).to have_content(pet_1.name)
     expect(page).to have_content(pet_1.approximate_age)
     expect(page).to have_content(pet_1.sex)
