@@ -1,0 +1,15 @@
+<h1> Enter the information for a new shelter </h1>
+
+<%= form_tag '/shelters', method: post do %>
+  <p>Enter name</p>
+  <%= text_field_tag :name %>
+  <p>Enter the address</p>
+  <%= text_field_tag :address %>
+  <p>Enter the city</p>
+  <%= text_field_tag :city %>
+  <p>Enter the state</p>
+  <%= text_field_tag :state %>
+  <p>Enter the zip</p>
+  <%= text_field_tag :zip %>
+  <%= submit_tag 'Submit' %>
+<% end %>

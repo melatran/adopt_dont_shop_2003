@@ -22,7 +22,6 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
     click_button "Submit"
 
     expect(current_path).to eq("/shelters")
-    
     expect(page).to have_content("Life is Ruff")
   end
 end
