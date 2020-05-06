@@ -1,7 +1,7 @@
 <h1>Adopt a cuddly family member today at one of these partners!</h1>
 
 <% @shelters.each do |shelter| %>
-  <h3><%= link_to "#{shelter.name}", "/shelters/#{shelter.id}"%> </h2>
+  <h3><%= link_to "#{shelter.name}", "/shelters/#{shelter.id}"%> </h3>
 <% end %>
 
 <h3><%= link_to 'New Shelter', '/shelters/new' %></h3>
