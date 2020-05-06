@@ -14,4 +14,13 @@ RSpec.describe "as a user, on the welcome page", type: :feature do
 
     expect(current_path).to eq("/shelters")
   end
+
+  it "can click on pets" do
+    visit '/'
+    expect(page).to have_link("Pet Index")
+
+    click_on "Pet Index"
+
+    expect(current_path).to eq("/pets")
+  end
 end
