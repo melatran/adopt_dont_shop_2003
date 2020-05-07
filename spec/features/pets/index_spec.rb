@@ -15,7 +15,7 @@ RSpec.describe "pets index page", type: :feature do
       name: "MoMo",
       approximate_age: "4",
       sex: "male",
-      name_of_shelter_where_pet_is_currently_located: "Life is Ruff",
+      name_of_shelter_where_pet_is_currently_located: "Paws For You",
       shelter_id: shelter_1.id
     )
 
