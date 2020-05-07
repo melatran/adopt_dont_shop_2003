@@ -2,12 +2,21 @@ require 'rails_helper'
 
 RSpec.describe "pets index page", type: :feature do
   it "can see all pets" do
+    shelter_1 = Shelter.create(
+      name: "Paws For You",
+      address: "1234 W Elf Ave",
+      city: "Denver",
+      state: "Colorado",
+      zip: "90210",
+    )
+
     pet_1 = Pet.create(
       image: 'https://www.petful.com/wp-content/uploads/2014/01/maltese-1.jpg',
       name: "MoMo",
       approximate_age: "4",
       sex: "male",
-      name_of_shelter_where_pet_is_currently_located: "Life is Ruff"
+      name_of_shelter_where_pet_is_currently_located: "Life is Ruff",
+      shelter_id: shelter_1.id
     )
 
     visit '/pets'
