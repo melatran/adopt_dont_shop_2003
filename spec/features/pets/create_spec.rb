@@ -1,0 +1,30 @@
+require 'rails_helper'
+
+RSpec.describe "Shelter Pets Index" do
+  describe "when i see a link to add new pet" do
+    it "i can create new pet in form" do
+      shelter_1 = Shelter.create(
+        name: "Paws For You",
+        address: "1234 W Elf Ave",
+        city: "Denver",
+        state: "Colorado",
+        zip: "90210",
+      )
+
+      visit "/shelters/#{shelter_1.id}/pets"
+      click_on "Create Pet"
+      expect(current_path).to eq("/shelters/#{shelter_1.id}/pets/new")
+
+      fill_in :image, with: "https://www.petful.com/wp-content/uploads/2014/01/maltese-1.jpg"
+      fill_in :name, with: "MoMo"
+      fill_in :description, with: "cuddly but spoiled"
+      fill_in :approximate_age, with: "4"
+      fill_in :sex, with: "male"
+
+      click_on 'Create Pet'
+
+      expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
+      expect(page).to have_content("MoMo")
+    end
+  end
+end

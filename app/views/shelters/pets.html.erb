@@ -6,3 +6,5 @@
   <p>Approximate Age:<%= pet.approximate_age %></p>
   <p>Sex:<%= pet.sex %></p>
 <% end %>
+
+<h3><%= link_to 'Create Pet', "/shelters/#{@shelter.id}/pets/new" %></h3>
