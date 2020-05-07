@@ -1,0 +1,8 @@
+<h1>All Available Pets for Adoption</h1>
+
+<% @pets.each do |pet| %>
+  <img src="<%= pet.image %>" alt-"it could be yours" width = "300" height = "300"</img>
+  <p>Name:<%= pet.name %></p>
+  <p>Approximate Age:<%= pet.approximate_age %></p>
+  <p>Sex:<%= pet.sex %></p>
+<% end %>

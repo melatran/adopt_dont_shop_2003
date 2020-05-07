@@ -14,6 +14,7 @@ class PetsController < ApplicationController
   def update
     pet = Pet.find(params[:id])
     pet.update({
+      image: params[:pet][:image],
       name: params[:pet][:name],
       description: params[:pet][:description],
       approximate_age: params[:pet][:approximate_age],

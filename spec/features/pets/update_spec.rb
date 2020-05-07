@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "as a user, when i visit the pets index", type: :feature do
-  xit "can update a pets information" do
+  it "can update a pets information" do
     pet_1 = Pet.create(
       image: 'https://www.petful.com/wp-content/uploads/2014/01/maltese-1.jpg',
       name: "MoMo",
