@@ -3,7 +3,6 @@
 <p>Description: <%= @pet.description %></p>
 <p>Approximate Age: <%= @pet.approximate_age %></p>
 <p>Sex: <%= @pet.sex %></p>
-<p>Status: <%= @pet.status %>></p>
+<p>Status: <%= @pet.status %></p>
 
-<h3><%= link_to 'Update Pet', "/pets/#{@pet.id}/edit" %></h3>
-<h3><%= link_to 'Return to Pets Index', "/pets" %></h3>
+<p><%= link_to 'Update Pet', "/pets/#{@pet.id}/edit" %></p>
