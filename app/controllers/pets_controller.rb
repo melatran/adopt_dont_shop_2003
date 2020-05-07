@@ -7,10 +7,6 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
   end
 
-  def list_shelter_pets_index
-    @pet = Shelter.find(params[:shelter_id])
-  end
-
   def edit
     @pet = Pet.find(params[:id])
   end
@@ -23,5 +19,8 @@ class PetsController < ApplicationController
       approximate_age: params[:pet][:approximate_age],
       sex: params[:pet][:sex]
       })
+
+    pet.save
+    redirect_to '/pets/#{pet.id}'
   end
 end
