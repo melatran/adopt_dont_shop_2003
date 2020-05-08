@@ -44,4 +44,9 @@ RSpec.describe "pets index page", type: :feature do
     expect(page).to have_content(@pet_2.sex)
     expect(page).to have_content(@pet_2.name_of_shelter_where_pet_is_currently_located)
   end
+
+  it "I can update pets from a link" do
+    visit '/pets'
+    expect(page).to have_link("Update Pet")
+  end
 end
