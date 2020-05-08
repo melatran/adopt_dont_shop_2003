@@ -21,7 +21,7 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
 
     click_on "Update Shelter"
 
-    expect(current_path).to eq("/shelters")
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}")
     expect(page).to have_content("MoMo's Adoption")
   end
 end
