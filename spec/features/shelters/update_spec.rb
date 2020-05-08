@@ -17,19 +17,11 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
     click_link "Update Shelter"
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
 
-    fill_in "shelter[name]", with: "MoMo's Adoption"
-    fill_in "shelter[address]", with: "1234 S Ahgase Way"
-    fill_in "shelter[city]", with: "Arcadia"
-    fill_in "shelter[state]", with: "CA"
-    fill_in "shelter[zip]", with: "91006"
+    fill_in :name, with: "MoMo's Adoption"
 
-    click_on "Submit"
+    click_on "Update Shelter"
 
-    expect(current_path).to eq("/shelters/#{@shelter_1.id}")
+    expect(current_path).to eq("/shelters")
     expect(page).to have_content("MoMo's Adoption")
-    expect(page).to have_content("1234 S Ahgase Way")
-    expect(page).to have_content("Arcadia")
-    expect(page).to have_content("CA")
-    expect(page).to have_content("91006")
   end
 end

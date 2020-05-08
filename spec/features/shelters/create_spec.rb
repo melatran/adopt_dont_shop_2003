@@ -10,14 +10,13 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
 
   it "can create a new shelter" do
     visit "/shelters/new"
-    fill_in "shelter[name]", with: "Life is Ruff"
-    fill_in "shelter[address]", with: "1234 S Ahgase Way"
-    fill_in "shelter[city]", with: "Arcadia"
-    fill_in "shelter[state]", with: "CA"
-    fill_in "shelter[zip]", with: "91006"
+    fill_in :name, with: "Life is Ruff"
+    fill_in :address, with: "1234 S Ahgase Way"
+    fill_in :city, with: "Arcadia"
+    fill_in :state, with: "CA"
+    fill_in :zip, with: "91006"
 
-    click_on 'Submit'
-
+    click_on 'Create Shelter'
     expect(current_path).to eq("/shelters")
     expect(page).to have_content("Life is Ruff")
   end
