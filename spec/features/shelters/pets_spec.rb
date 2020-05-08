@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "when i visit the shelter index", type: :feature do
-  it "can see all pets in shelter" do
-    shelter_1 = Shelter.create(
+  before :each do
+    @shelter_1 = Shelter.create(
       name: "Paws For You",
       address: "1234 W Elf Ave",
       city: "Denver",
@@ -10,24 +10,27 @@ RSpec.describe "when i visit the shelter index", type: :feature do
       zip: "90210",
     )
 
-    pet_1 = Pet.create(
+    @pet_1 = Pet.create(
       image: 'https://www.petful.com/wp-content/uploads/2014/01/maltese-1.jpg',
       name: "MoMo",
       approximate_age: "4",
       sex: "male",
       name_of_shelter_where_pet_is_currently_located: "Paws For You",
-      shelter_id: shelter_1.id
+      shelter_id: @shelter_1.id
     )
+  end
+  
+  it "can see all pets in shelter" do
 
-    visit "/shelters/#{shelter_1.id}"
+    visit "/shelters/#{@shelter_1.id}"
     expect(page).to have_link("Pets")
 
     click_on "Pets"
 
-    expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
-    expect(page).to have_css("img[src='#{pet_1.image}']")
-    expect(page).to have_content(pet_1.name)
-    expect(page).to have_content(pet_1.approximate_age)
-    expect(page).to have_content(pet_1.sex)
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
+    expect(page).to have_css("img[src='#{@pet_1.image}']")
+    expect(page).to have_content(@pet_1.name)
+    expect(page).to have_content(@pet_1.approximate_age)
+    expect(page).to have_content(@pet_1.sex)
   end
 end

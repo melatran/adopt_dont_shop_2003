@@ -1,18 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe "as a user, when i visit the shelters index", type: :feature do
-  it "can update a shelters information" do
-    shelter_1 = Shelter.create(
+  before :each do
+    @shelter_1 = Shelter.create(
       name: "Paws For You",
       address: "1234 W Elf Ave",
       city: "Denver",
       state: "Colorado",
       zip: "90210")
+  end
 
-    visit "/shelters/#{shelter_1.id}"
+  it "can update a shelters information" do
+
+    visit "/shelters/#{@shelter_1.id}"
     expect(page).to have_link("Update Shelter")
     click_link "Update Shelter"
-    expect(current_path).to eq("/shelters/#{shelter_1.id}/edit")
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
 
     fill_in "shelter[name]", with: "MoMo's Adoption"
     fill_in "shelter[address]", with: "1234 S Ahgase Way"
@@ -22,7 +25,7 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
 
     click_on "Submit"
 
-    expect(current_path).to eq("/shelters/#{shelter_1.id}")
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}")
     expect(page).to have_content("MoMo's Adoption")
     expect(page).to have_content("1234 S Ahgase Way")
     expect(page).to have_content("Arcadia")
