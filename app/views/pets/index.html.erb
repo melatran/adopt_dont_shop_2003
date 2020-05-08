@@ -7,4 +7,5 @@
   <p>Sex:<%= pet.sex %></p>
   <p>Current Location:<%= pet.name_of_shelter_where_pet_is_currently_located %></p>
   <p><%= link_to 'Update Pet', "/pets/#{pet.id}/edit" %></p>
+  <p><%= link_to 'Delete Pet', "/pets/#{pet.id}", method: :delete %></p>
 <% end %>
