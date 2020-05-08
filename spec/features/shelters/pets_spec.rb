@@ -19,7 +19,7 @@ RSpec.describe "when i visit the shelter index", type: :feature do
       shelter_id: @shelter_1.id
     )
   end
-  
+
   it "can see all pets in shelter" do
 
     visit "/shelters/#{@shelter_1.id}"
@@ -33,4 +33,10 @@ RSpec.describe "when i visit the shelter index", type: :feature do
     expect(page).to have_content(@pet_1.approximate_age)
     expect(page).to have_content(@pet_1.sex)
   end
+
+  it "I can update pets from a link" do
+    visit "/shelters/#{@shelter_1.id}/pets"
+    expect(page).to have_link("Update Pet")
+  end
+
 end
