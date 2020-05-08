@@ -24,5 +24,9 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
     expect(page).to have_content(@shelter_2.name)
   end
 
-  it "I can see a link to edit that shelter"
+  it "I can see an edit link next to the shelter" do
+    visit "/shelters"
+    expect(page).to have_link("Edit")
+    click_on "Edit"
+  end
 end
