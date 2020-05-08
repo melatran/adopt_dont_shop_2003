@@ -43,4 +43,11 @@ RSpec.describe "when i visit the shelter index", type: :feature do
     visit "/shelters/#{@shelter_1.id}/pets"
     expect(page).to have_link("Delete Pet")
   end
+
+  it "I can click on pet's name and get to pet show page" do
+    visit "/shelters/#{@shelter_1.id}/pets"
+    expect(page).to have_content(@pet_1.name)
+    click_on @pet_1.name
+    expect(current_path).to eq("/pets/#{@pet_1.id}")
+  end
 end
