@@ -39,4 +39,8 @@ RSpec.describe "when i visit the shelter index", type: :feature do
     expect(page).to have_link("Update Pet")
   end
 
+  it "I can delete pets from a link" do
+    visit "/shelters/#{@shelter_1.id}/pets"
+    expect(page).to have_link("Delete Pet")
+  end
 end
