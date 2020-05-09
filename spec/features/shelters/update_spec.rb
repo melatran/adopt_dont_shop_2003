@@ -6,7 +6,7 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
       name: "Paws For You",
       address: "1234 W Elf Ave",
       city: "Denver",
-      state: "Colorado",
+      state: "CO",
       zip: "90210")
   end
 
@@ -23,5 +23,9 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
 
     expect(current_path).to eq("/shelters/#{@shelter_1.id}")
     expect(page).to have_content("MoMo's Adoption")
+    expect(page).to have_content("1234 W Elf Ave")
+    expect(page).to have_content("Denver")
+    expect(page).to have_content("CO")
+    expect(page).to have_content("90210")
   end
 end
