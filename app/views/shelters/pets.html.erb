@@ -3,10 +3,10 @@
   <%= link_to 'Return to Shelter', "/shelters/#{@shelter.id}" %></p>
 
 <% @list_of_pets.each do |pet| %>
-  <img src="<%= pet.image %>" alt-"it could be yours" width = "300" height = "300"</img>
+  <img src="<%= pet.image %>" alt-"it could be yours" width = "300" height = "240"</img>
   <p><%= link_to "#{pet.name}", "/pets/#{pet.id}"%></p>
   <p>Approximate Age:<%= pet.approximate_age %></p>
   <p>Sex:<%= pet.sex %></p>
-  <p><%= link_to 'Update Pet', "/pets/#{pet.id}/edit" %></p>
-  <p><%= link_to 'Delete Pet', "/pets/#{pet.id}", method: :delete %></p>
+  <p><%= link_to 'Update Pet', "/pets/#{pet.id}/edit" %>&nbsp;&nbsp;
+  <%= link_to 'Delete Pet', "/pets/#{pet.id}", method: :delete %></p>
 <% end %>
