@@ -1,4 +1,6 @@
-<h3><%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp;<%= link_to 'Return to Shelters Index', "/shelters" %></h3>
+<div class="navigationbar">
+  <%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Return to Shelters Index', "/shelters" %>
+</div>
 <br/>
 <h1><%= @pet.name %></h1>
 <img src="<%= @pet.image %>" alt-"it could be yours" width = "300" height = "240"</img>

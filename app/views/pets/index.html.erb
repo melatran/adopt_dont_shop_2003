@@ -1,5 +1,8 @@
-<h1>All Pets</h1>
-<h3><%= link_to 'Return to Shelters Index', "/shelters" %></h3>
+<div class="navigationbar">
+  <%= link_to 'Return to Shelters Index', "/shelters" %>
+</div>
+
+<h1>All Pets in All Shelters</h1>
 
 <% @pets.each do |pet| %>
   <img src="<%= pet.image %>" alt-"it could be yours" width = "300" height = "240"</img>

@@ -1,7 +1,11 @@
-<h3><%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp;<%= link_to 'Return to Shelters Index', "/shelters" %></h3>
-<h1> Edit the information about a pet </h1>
+<div class="navigationbar">
+<%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp;<%= link_to 'Return to Shelters Index', "/shelters" %>
+</div>
+
+<h1> Update the Pet </h1>
 
 <%= form_tag "/pets/#{@pet.id}", method: :patch do %>
+  <p>Edit the information about the pet below</p>
   <%= label_tag "Add Image Url" %>
   <%= text_field_tag :image, @pet.image %><br/>
   <%= label_tag :name %>

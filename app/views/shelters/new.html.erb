@@ -1,8 +1,11 @@
-<h3><%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp;<%= link_to 'Return to Shelters Index', "/shelters" %></h3>
+<div class="navigationbar">
+  <%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Return to Shelters Index', "/shelters" %>
+</div>
 
-<h1> Enter the information for a new shelter </h1>
+<h1> Create a New Shelter </h1>
 
 <%= form_tag "/shelters" do %>
+  <p>Enter the information for a new shelter.</p>
   <%= label_tag :name %>
   <%= text_field_tag :name %><br/>
   <%= label_tag :address %>

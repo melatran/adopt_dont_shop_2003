@@ -1,7 +1,10 @@
-<h3><%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp;<%= link_to 'Return to Shelters Index', "/shelters" %></h3>
-<h1> Enter the information about a new buddy for adoption </h1>
+<div class="navigationbar">
+  <%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Return to Shelters Index', "/shelters" %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Return to Shelter', "/shelters/#{@shelter.id}" %>
+</div>
+<h1> Create A New Pet </h1>
 
 <%= form_tag "/shelters/#{@shelter.id}/pets" do %>
+  <p>Enter the information about a new buddy for adoption.</p>
   <%= label_tag "Add Image Url" %>
   <%= text_field_tag :image %><br/>
   <%= label_tag :name %>

@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+
+a:visited{
+  color: black;
+}
+
+a:link{
+  color: black;
+}
+
+a:hover{
+  color: #ccc;
+}
+
+a:active{
+  color: black;
+}
+
+body {
+   background-color: rosybrown;
+   font-family: "Gill Sans", Gadget, sans-serif;
+   font-size: 20px;
+}
+
+
+h1 {
+  text-align: center;
+  font-family: "Gill Sans", Gadget, sans-serif;
+  font-size: 45px;
+  color: #ccc;
+  padding: 40px 15px 15px 10px;
+}
+
+
+.navigationbar{
+  background-color:#876452;
+  width: 100%;
+  height: 25px;
+  font-family: "Gill Sans", Gadget, sans-serif;
+  font-size: 18px;
+  text-align: left;
+  color: white;
+  padding: 10px 10px 10px 10px;
+}
+
+#indexsentence{
+  text-align: center;
+  font-size: 30px;
+  color: #876452;
+}
