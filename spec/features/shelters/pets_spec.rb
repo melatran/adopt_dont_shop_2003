@@ -62,4 +62,9 @@ RSpec.describe "when i visit the shelter index", type: :feature do
     click_on "Return to Pets Index"
     expect(current_path).to eq("/pets")
   end
+
+  it "I can see total number of pets a shelter has" do
+    visit "/shelters/#{@shelter_1.id}/pets"
+    expect(page).to have_content("1")
+  end
 end
