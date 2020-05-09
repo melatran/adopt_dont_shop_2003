@@ -14,7 +14,7 @@ RSpec.describe "Pet Show Page" do
       name: "MoMo",
       description: "spoiled",
       approximate_age: "4",
-      sex: "male",
+      sex: "Male",
       shelter_id: @shelter_1.id,
     )
   end
@@ -33,7 +33,7 @@ RSpec.describe "Pet Show Page" do
       expect(page).to have_content("loves to nap")
       expect(page).to have_content("MoMo")
       expect(page).to have_content("4")
-      expect(page).to have_content("male")
+      expect(page).to have_content("Male")
     end
   end
 
