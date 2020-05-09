@@ -1,7 +1,8 @@
 <div class="navigationbar">
   <%= link_to 'Create Pet', "/shelters/#{@shelter.id}/pets/new" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <%= link_to 'Return to Shelter', "/shelters/#{@shelter.id}" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Return to Shelters Index', "/shelters" %>
+    <%= link_to "Return to #{@shelter.name}", "/shelters/#{@shelter.id}" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Return to Shelters Index', "/shelters" %>
 </div>
+
 <h1>All Available Pets for Adoption</h1>
 <p>Number of Pets: <%= @shelter.total_pets %></p><br>
 <% @list_of_pets.each do |pet| %>

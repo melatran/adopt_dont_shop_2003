@@ -1,15 +1,16 @@
 <div class="navigationbar">
   <%= link_to 'Return to Shelters Index', "/shelters" %>&nbsp;&nbsp;&nbsp;&nbsp;
-  <%= link_to 'Return to Pets Index', "/pets" %>
+  <%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "View All Pets in #{@shelter.name}", "/shelters/#{@shelter.id}/pets" %>
 </div>
 
 <h1><%= @shelter.name %></h1>
-<p>Address: <%= @shelter.address %></p>
-<p>City: <%= @shelter.city %></p>
-<p>State: <%= @shelter.state %></p>
-<p>Zip: <%= @shelter.zip %></p>
+<section class="show">
+  <p>Address: <%= @shelter.address %></p>
+  <p>City: <%= @shelter.city %></p>
+  <p>State: <%= @shelter.state %></p>
+  <p>Zip: <%= @shelter.zip %></p>
+</section>
 
 
-<h3><%= link_to 'Update Shelter', "/shelters/#{@shelter.id}/edit" %></h3>
-<h3><%= link_to 'Delete Shelter', "/shelters/#{@shelter.id}", method: :delete %></h3>
-<h3><%= link_to 'View All Pets in Shelter', "/shelters/#{@shelter.id}/pets" %></h3>
+<h4><%= link_to 'Update Shelter', "/shelters/#{@shelter.id}/edit" %></h4>
+<h4><%= link_to 'Delete Shelter', "/shelters/#{@shelter.id}", method: :delete %></h4>
