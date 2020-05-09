@@ -36,4 +36,16 @@ RSpec.describe "Pet Show Page" do
       expect(page).to have_content("male")
     end
   end
+
+  it "I can click on link and return to shelters index page" do
+    visit "/pets/#{@pet_1.id}/edit"
+    click_on "Return to Shelters Index"
+    expect(current_path).to eq("/shelters")
+  end
+
+  it "I can click on link and return to pets index page" do
+    visit "/pets/#{@pet_1.id}/edit"
+    click_on "Return to Pets Index"
+    expect(current_path).to eq("/pets")
+  end
 end

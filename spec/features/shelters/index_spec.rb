@@ -42,7 +42,7 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
 
   it "I can click on link to pets index" do
     visit '/shelters'
-    click_on "Pets Index"
+    click_on "Return to Pets Index"
     expect(current_path).to eq("/pets")
   end
 end

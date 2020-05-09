@@ -25,7 +25,7 @@ RSpec.describe "when i visit the shelter index", type: :feature do
     visit "/shelters/#{@shelter_1.id}"
     expect(page).to have_link("Pets")
 
-    click_on "Pets"
+    click_on "View All Pets in Shelter"
 
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
     expect(page).to have_css("img[src='#{@pet_1.image}']")
@@ -49,5 +49,17 @@ RSpec.describe "when i visit the shelter index", type: :feature do
     expect(page).to have_content(@pet_1.name)
     click_on @pet_1.name
     expect(current_path).to eq("/pets/#{@pet_1.id}")
+  end
+
+  it "I can click on link and return to shelters index page" do
+    visit "/shelters/#{@shelter_1.id}/pets"
+    click_on "Return to Shelters Index"
+    expect(current_path).to eq("/shelters")
+  end
+
+  it "I can click on link and return to pets index page" do
+    visit "/shelters/#{@shelter_1.id}/pets"
+    click_on "Return to Pets Index"
+    expect(current_path).to eq("/pets")
   end
 end
