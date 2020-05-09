@@ -16,8 +16,11 @@
     <%= label_tag :age %>
     <%= text_field_tag :approximate_age, @pet.approximate_age %><br/>
     <%= label_tag :sex %>
-    <%= text_field_tag :sex, @pet.sex %><br/>
-
+      <select class="gender" name="sex" id="sex" style="height: 30px !important;" >
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      
     <p><%= submit_tag 'Update Pet' %></p>
   <% end %>
 </section>
