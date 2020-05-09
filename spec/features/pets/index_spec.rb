@@ -55,4 +55,9 @@ RSpec.describe "pets index page", type: :feature do
     expect(page).to have_link("Delete Pet")
   end
 
+  it "I can click on link to return to shelters" do
+    visit '/pets'
+    click_on "Return to Shelters Index"
+    expect(current_path).to eq("/shelters")
+  end
 end

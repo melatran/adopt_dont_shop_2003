@@ -18,7 +18,6 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
     end
 
   it "can see the names of each shelter" do
-
     visit "/shelters"
     expect(page).to have_content(@shelter_1.name)
     expect(page).to have_content(@shelter_2.name)
@@ -39,5 +38,11 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
     expect(page).to have_content(@shelter_1.name)
     click_on @shelter_1.name
     expect(current_path). to eq("/shelters/#{@shelter_1.id}")
+  end
+
+  it "I can click on link to pets index" do
+    visit '/shelters'
+    click_on "Pets Index"
+    expect(current_path).to eq("/pets")
   end
 end

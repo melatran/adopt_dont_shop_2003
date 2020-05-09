@@ -30,4 +30,10 @@ RSpec.describe "as a user, when i visit the index page", type: :feature do
     expect(page).to have_content(@pet_1.sex)
     expect(page).to have_content(@pet_1.status)
   end
+
+  it "can click on pets index to go back to pets index" do
+    visit "/pets/#{@pet_1.id}"
+    click_on "Pets Index"
+    expect(current_path).to eq("/pets")
+  end
 end
