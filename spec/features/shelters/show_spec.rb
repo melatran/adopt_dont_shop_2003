@@ -19,18 +19,30 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
 
   it "can show the attributes of the shelter with that id" do
 
-  visit "/shelters/#{@shelter_1.id}"
-  expect(page).to have_content(@shelter_1.name)
-  expect(page).to have_content(@shelter_1.address)
-  expect(page).to have_content(@shelter_1.city)
-  expect(page).to have_content(@shelter_1.state)
-  expect(page).to have_content(@shelter_1.zip)
+    visit "/shelters/#{@shelter_1.id}"
+    expect(page).to have_content(@shelter_1.name)
+    expect(page).to have_content(@shelter_1.address)
+    expect(page).to have_content(@shelter_1.city)
+    expect(page).to have_content(@shelter_1.state)
+    expect(page).to have_content(@shelter_1.zip)
 
-  visit "/shelters/#{@shelter_2.id}"
-  expect(page).to have_content(@shelter_2.name)
-  expect(page).to have_content(@shelter_2.address)
-  expect(page).to have_content(@shelter_2.city)
-  expect(page).to have_content(@shelter_2.state)
-  expect(page).to have_content(@shelter_2.zip)
+    visit "/shelters/#{@shelter_2.id}"
+    expect(page).to have_content(@shelter_2.name)
+    expect(page).to have_content(@shelter_2.address)
+    expect(page).to have_content(@shelter_2.city)
+    expect(page).to have_content(@shelter_2.state)
+    expect(page).to have_content(@shelter_2.zip)
+  end
+
+  it "I can click on link and return to shelters index page" do
+    visit "/shelters/#{@shelter_1.id}"
+    click_on "Return to Shelters Index"
+    expect(current_path).to eq("/shelters")
+  end
+
+  it "I can click on link and return to pets index page" do
+    visit "/shelters/#{@shelter_1.id}"
+    click_on "Return to Pets Index"
+    expect(current_path).to eq("/pets")
   end
 end

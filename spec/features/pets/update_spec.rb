@@ -15,12 +15,10 @@ RSpec.describe "Pet Show Page" do
       description: "spoiled",
       approximate_age: "4",
       sex: "male",
-      name_of_shelter_where_pet_is_currently_located: "Paws For You",
       shelter_id: @shelter_1.id,
-      status: "Adoptable"
     )
   end
-  
+
   describe "when I see a link to update pets" do
     it "I can update pet" do
 
@@ -28,15 +26,26 @@ RSpec.describe "Pet Show Page" do
       click_link "Update Pet"
       expect(current_path).to eq("/pets/#{@pet_1.id}/edit")
 
-      fill_in :image, with: "https://www.petful.com/wp-content/uploads/2014/01/maltese-1.jpg"
-      fill_in :name, with: "MoMo"
       fill_in :description, with: "loves to nap"
-      fill_in :approximate_age, with: "4"
-      fill_in :sex, with: "male"
 
       click_on "Update Pet"
       expect(current_path).to eq("/pets/#{@pet_1.id}")
       expect(page).to have_content("loves to nap")
+      expect(page).to have_content("MoMo")
+      expect(page).to have_content("4")
+      expect(page).to have_content("male")
     end
+  end
+
+  it "I can click on link and return to shelters index page" do
+    visit "/pets/#{@pet_1.id}/edit"
+    click_on "Return to Shelters Index"
+    expect(current_path).to eq("/shelters")
+  end
+
+  it "I can click on link and return to pets index page" do
+    visit "/pets/#{@pet_1.id}/edit"
+    click_on "Return to Pets Index"
+    expect(current_path).to eq("/pets")
   end
 end

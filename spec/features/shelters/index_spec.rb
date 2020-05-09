@@ -18,9 +18,31 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
     end
 
   it "can see the names of each shelter" do
-
     visit "/shelters"
     expect(page).to have_content(@shelter_1.name)
     expect(page).to have_content(@shelter_2.name)
+  end
+
+  it "I can see an edit link next to the shelter" do
+    visit "/shelters"
+    expect(page).to have_link("Edit Shelter")
+  end
+
+  it "I can delete shelter from shelter index" do
+    visit "/shelters"
+    expect(page).to have_link("Delete Shelter")
+  end
+
+  it "I can click on the name and it will bring me to the shelter show page" do
+    visit "/shelters"
+    expect(page).to have_content(@shelter_1.name)
+    click_on @shelter_1.name
+    expect(current_path). to eq("/shelters/#{@shelter_1.id}")
+  end
+
+  it "I can click on link to pets index" do
+    visit '/shelters'
+    click_on "Return to Pets Index"
+    expect(current_path).to eq("/pets")
   end
 end

@@ -1,9 +1,12 @@
 <h1>All Pets</h1>
+<h3><%= link_to 'Return to Shelters Index', "/shelters" %></h3>
 
 <% @pets.each do |pet| %>
-  <img src="<%= pet.image %>" alt-"it could be yours" width = "300" height = "300"</img>
-  <p>Name:<%= pet.name %></p>
+  <img src="<%= pet.image %>" alt-"it could be yours" width = "300" height = "240"</img>
+  <p>Name:<%= link_to "#{pet.name}", "/pets/#{pet.id}"%></p>
   <p>Approximate Age:<%= pet.approximate_age %></p>
   <p>Sex:<%= pet.sex %></p>
-  <p>Current Location:<%= pet.name_of_shelter_where_pet_is_currently_located %></p>
+  <p>Current Location:<%= pet.shelter.name%></p>
+  <p><%= link_to 'Update Pet', "/pets/#{pet.id}/edit" %>&nbsp;&nbsp;
+  <%= link_to 'Delete Pet', "/pets/#{pet.id}", method: :delete %></p>
 <% end %>

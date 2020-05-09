@@ -1,7 +1,10 @@
-<h1>Adopt a cuddly family member today at one of these partners!</h1>
+<h1>Adopt a cuddly family member today!</h1>
+<h3><%= link_to 'Return to Pets Index', "/pets" %></h3>
 
 <% @shelters.each do |shelter| %>
-  <h3><%= link_to "#{shelter.name}", "/shelters/#{shelter.id}"%> </h3>
+  <p><%= link_to "#{shelter.name}", "/shelters/#{shelter.id}"%>&nbsp;&nbsp;--&nbsp;&nbsp;
+    <%= link_to 'Edit Shelter', "/shelters/#{shelter.id}/edit" %>&nbsp;&nbsp;--&nbsp;&nbsp;
+    <%= link_to 'Delete Shelter', "/shelters/#{shelter.id}", method: :delete %></p>
 <% end %>
 
 <h3><%= link_to 'New Shelter', '/shelters/new' %></h3>

@@ -15,7 +15,6 @@ RSpec.describe "pets index page", type: :feature do
       name: "MoMo",
       approximate_age: "4",
       sex: "male",
-      name_of_shelter_where_pet_is_currently_located: "Paws For You",
       shelter_id: @shelter_1.id
     )
 
@@ -24,7 +23,6 @@ RSpec.describe "pets index page", type: :feature do
       name: "Lucy",
       approximate_age: "6",
       sex: "female",
-      name_of_shelter_where_pet_is_currently_located: "Paws For You",
       shelter_id: @shelter_1.id
     )
 
@@ -37,11 +35,27 @@ RSpec.describe "pets index page", type: :feature do
     expect(page).to have_content(@pet_1.name)
     expect(page).to have_content(@pet_1.approximate_age)
     expect(page).to have_content(@pet_1.sex)
-    expect(page).to have_content(@pet_1.name_of_shelter_where_pet_is_currently_located)
+    expect(page).to have_content(@pet_1.shelter.name)
     expect(page).to have_css("img[src='#{@pet_2.image}']")
     expect(page).to have_content(@pet_2.name)
     expect(page).to have_content(@pet_2.approximate_age)
     expect(page).to have_content(@pet_2.sex)
-    expect(page).to have_content(@pet_2.name_of_shelter_where_pet_is_currently_located)
+    expect(page).to have_content(@pet_2.shelter.name)
+  end
+
+  it "I can update pets from a link" do
+    visit '/pets'
+    expect(page).to have_link("Update Pet")
+  end
+
+  it "I can delete pets from a link" do
+    visit '/pets'
+    expect(page).to have_link("Delete Pet")
+  end
+
+  it "I can click on link to return to shelters" do
+    visit '/pets'
+    click_on "Return to Shelters Index"
+    expect(current_path).to eq("/shelters")
   end
 end
