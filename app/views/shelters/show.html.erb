@@ -4,13 +4,14 @@
 </div>
 
 <h1><%= @shelter.name %></h1>
+<div class="edit-buttons">
+  <button><%= link_to 'Update Shelter', "/shelters/#{@shelter.id}/edit" %></button>
+  <button><%= link_to 'Delete Shelter', "/shelters/#{@shelter.id}", method: :delete %></button>
+</div>
+
 <section class="show">
   <p>Address: <%= @shelter.address %></p>
   <p>City: <%= @shelter.city %></p>
   <p>State: <%= @shelter.state %></p>
   <p>Zip: <%= @shelter.zip %></p>
 </section>
-
-
-<h4><%= link_to 'Update Shelter', "/shelters/#{@shelter.id}/edit" %></h4>
-<h4><%= link_to 'Delete Shelter', "/shelters/#{@shelter.id}", method: :delete %></h4>
