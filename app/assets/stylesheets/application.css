@@ -148,3 +148,7 @@ input[type=submit] {
   color: #876452;
   text-align: center;
 }
+
+#status {
+  color: #d91c1c;
+}
