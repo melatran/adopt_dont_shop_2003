@@ -41,4 +41,10 @@ RSpec.describe "Shelter Pets Index" do
     click_on "Return to Pets Index"
     expect(current_path).to eq("/pets")
   end
+
+  it "I can click on link and return to shelters page" do
+    visit "/shelters/#{@shelter_1.id}/pets/new"
+    click_on "Return to Paws For You"
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}")
+  end
 end
