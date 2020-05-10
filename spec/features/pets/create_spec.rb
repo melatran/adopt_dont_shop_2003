@@ -22,8 +22,7 @@ RSpec.describe "Shelter Pets Index" do
       fill_in :name, with: "MoMo"
       fill_in :description, with: "cuddly but spoiled"
       fill_in :approximate_age, with: "4"
-      fill_in :sex, with: "male"
-
+      find('#sex').find(:xpath, 'option[2]').click
       click_on 'Create Pet'
 
       expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
@@ -41,5 +40,11 @@ RSpec.describe "Shelter Pets Index" do
     visit "/shelters/#{@shelter_1.id}/pets/new"
     click_on "Return to Pets Index"
     expect(current_path).to eq("/pets")
+  end
+
+  it "I can click on link and return to shelters page" do
+    visit "/shelters/#{@shelter_1.id}/pets/new"
+    click_on "Return to Paws For You"
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}")
   end
 end

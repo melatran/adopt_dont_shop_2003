@@ -31,12 +31,6 @@ RSpec.describe "as a user, when i visit the index page", type: :feature do
     expect(page).to have_content(@pet_1.status)
   end
 
-  it "can click on pets index to go back to pets index" do
-    visit "/pets/#{@pet_1.id}"
-    click_on "Pets Index"
-    expect(current_path).to eq("/pets")
-  end
-
   it "I can click on link and return to shelters index page" do
     visit "/pets/#{@pet_1.id}"
     click_on "Return to Shelters Index"
@@ -47,5 +41,15 @@ RSpec.describe "as a user, when i visit the index page", type: :feature do
     visit "/pets/#{@pet_1.id}"
     click_on "Return to Pets Index"
     expect(current_path).to eq("/pets")
+  end
+
+  it "I can click on link to update pet" do
+    visit "/pets/#{@pet_1.id}"
+    expect(page).to have_content("Update Pet")
+  end
+
+  it "I can click on link to delete pet" do
+    visit "/pets/#{@pet_1.id}"
+    expect(page).to have_content("Delete Pet")
   end
 end
