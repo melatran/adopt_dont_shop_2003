@@ -1,5 +1,7 @@
 # Adopt Don't Shop
-BE Mod 2 Week 1 Solo Project
+<img width="1381" alt="Screen Shot 2020-10-03 at 9 21 38 AM" src="https://user-images.githubusercontent.com/59414750/94995179-da710400-0559-11eb-9745-61a6ae272ba0.png">
+
+Adopt Don't Shop is a fictiuous website that lists shelters and the pets available for adoption at their location. This was built in Ruby on Rails in a week. Shelters can update their own information as well as their pets. Click [here](https://adoptdontshop-project1.herokuapp.com/) to view in production.
 
 ## Learning Goals
 
